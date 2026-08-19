@@ -147,6 +147,26 @@ export default async function BlogPostPage({ params }: PageProps) {
                   </h2>
                 )
               }
+              if (block.type === 'h3') {
+                return (
+                  <h3
+                    key={i}
+                    className="mt-2 text-balance text-lg font-semibold text-foreground"
+                  >
+                    {block.text}
+                  </h3>
+                )
+              }
+              if (block.type === 'quote') {
+                return (
+                  <blockquote
+                    key={i}
+                    className="border-l-2 border-primary bg-secondary/30 py-4 pl-5 pr-4 text-pretty text-lg font-medium leading-relaxed text-foreground/90"
+                  >
+                    {block.text}
+                  </blockquote>
+                )
+              }
               if (block.type === 'ul') {
                 return (
                   <ul key={i} className="flex flex-col gap-2.5 pl-1">
@@ -160,6 +180,23 @@ export default async function BlogPostPage({ params }: PageProps) {
                       </li>
                     ))}
                   </ul>
+                )
+              }
+              if (block.type === 'ol') {
+                return (
+                  <ol key={i} className="flex flex-col gap-2.5 pl-1">
+                    {block.items.map((item, idx) => (
+                      <li key={item} className="flex gap-3 text-foreground/85">
+                        <span
+                          className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-xs font-semibold text-azure-soft"
+                          aria-hidden="true"
+                        >
+                          {idx + 1}
+                        </span>
+                        <span className="leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ol>
                 )
               }
               return (
