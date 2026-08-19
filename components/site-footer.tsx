@@ -1,11 +1,11 @@
 import { Logo } from '@/components/logo'
 
 const footerNav = [
-  { label: 'Services', href: '#services' },
-  { label: 'Industries', href: '#industries' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
-  { label: 'Privacy Policy', href: '#' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Industries', href: '/#industries' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'About', href: '/#about' },
+  { label: 'Contact', href: '/#contact' },
 ]
 
 export function SiteFooter() {

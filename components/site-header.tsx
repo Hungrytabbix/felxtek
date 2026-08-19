@@ -7,13 +7,14 @@ import { cn } from '@/lib/utils'
 import { Logo } from '@/components/logo'
 
 const navItems = [
-  { label: 'Services', href: '#services' },
-  { label: 'Microsoft Cloud', href: '#microsoft-cloud' },
-  { label: 'Cybersecurity', href: '#cybersecurity' },
-  { label: 'Compliance', href: '#compliance' },
-  { label: 'Industries', href: '#industries' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Microsoft Cloud', href: '/#microsoft-cloud' },
+  { label: 'Cybersecurity', href: '/#cybersecurity' },
+  { label: 'Compliance', href: '/#compliance' },
+  { label: 'Industries', href: '/#industries' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'About', href: '/#about' },
+  { label: 'Contact', href: '/#contact' },
 ]
 
 export function SiteHeader() {
@@ -44,7 +45,7 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="#top" className="flex items-center gap-2.5" aria-label="FelxTek home">
+        <a href="/" className="flex items-center gap-2.5" aria-label="FelxTek home">
           <Logo className="h-8 w-8" />
           <span className="text-lg font-semibold tracking-tight text-foreground">
             Felx<span className="text-primary">Tek</span>
@@ -68,7 +69,7 @@ export function SiteHeader() {
             size="lg"
             nativeButton={false}
             className="bg-primary text-primary-foreground shadow-[0_0_24px_-6px] shadow-primary/60 hover:bg-primary/90"
-            render={<a href="#contact" />}
+            render={<a href="/#contact" />}
           >
             Schedule a Consultation
             <ArrowRight data-icon="inline-end" />
@@ -106,7 +107,7 @@ export function SiteHeader() {
               size="lg"
               nativeButton={false}
               className="mt-2 bg-primary text-primary-foreground hover:bg-primary/90"
-              render={<a href="#contact" onClick={() => setOpen(false)} />}
+              render={<a href="/#contact" onClick={() => setOpen(false)} />}
             >
               Schedule a Consultation
               <ArrowRight data-icon="inline-end" />

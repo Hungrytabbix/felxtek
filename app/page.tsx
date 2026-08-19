@@ -9,6 +9,7 @@ import { SecurityAssessmentSection } from '@/components/security-assessment-sect
 import { WhySection } from '@/components/why-section'
 import { ProcessSection } from '@/components/process-section'
 import { AboutSection } from '@/components/about-section'
+import { BlogSection } from '@/components/blog-section'
 import { ContactSection } from '@/components/contact-section'
 import { SiteFooter } from '@/components/site-footer'
 
@@ -27,6 +28,7 @@ export default function Page() {
         <WhySection />
         <ProcessSection />
         <AboutSection />
+        <BlogSection />
         <ContactSection />
       </main>
       <SiteFooter />
