@@ -36,11 +36,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  icons: {
-    icon: [{ url: '/icon.png', type: 'image/png' }],
-    apple: [{ url: '/icon.png' }],
-    shortcut: ['/icon.png'],
-  },
   openGraph: {
     title: 'FelxTek | Microsoft Cloud & Cybersecurity Consulting',
     description:
