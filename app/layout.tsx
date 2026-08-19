@@ -1,0 +1,66 @@
+import { Analytics } from '@vercel/analytics/next'
+import type { Metadata, Viewport } from 'next'
+import { Geist, Geist_Mono, Space_Grotesk } from 'next/font/google'
+import './globals.css'
+
+const geist = Geist({ subsets: ['latin'], variable: '--font-geist' })
+const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
+})
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://felxtek.com'),
+  title: {
+    default:
+      'FelxTek | Microsoft Cloud & Cybersecurity Consulting in Southern California',
+    template: '%s | FelxTek',
+  },
+  description:
+    'FelxTek is a Southern California Microsoft cloud consulting and cybersecurity firm. We design, secure, and manage Microsoft Azure, Microsoft 365, Entra ID, Intune, Defender, and Sentinel environments—with expertise in HIPAA, SOC 2, CMMC, FedRAMP, and NIST.',
+  keywords: [
+    'Microsoft Azure Consulting Southern California',
+    'Microsoft 365 Consulting',
+    'Azure Security Consulting',
+    'Microsoft Cloud Consulting',
+    'Microsoft Cybersecurity Consulting',
+    'CMMC Consulting',
+    'SOC 2 Cloud Security',
+    'HIPAA Microsoft 365 Security',
+    'Azure Managed Services',
+  ],
+  authors: [{ name: 'FelxTek' }],
+  openGraph: {
+    title: 'FelxTek | Microsoft Cloud & Cybersecurity Consulting',
+    description:
+      'Microsoft Cloud Infrastructure & Cybersecurity built for modern business. Secure, modernize, and scale your Azure and Microsoft 365 environment.',
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'FelxTek',
+  },
+  generator: 'v0.app',
+}
+
+export const viewport: Viewport = {
+  colorScheme: 'dark',
+  themeColor: '#0b1020',
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html
+      lang="en"
+      className={`${geist.variable} ${geistMono.variable} ${spaceGrotesk.variable} bg-background`}
+    >
+      <body className="font-sans antialiased">
+        {children}
+        {process.env.NODE_ENV === 'production' && <Analytics />}
+      </body>
+    </html>
+  )
+}
