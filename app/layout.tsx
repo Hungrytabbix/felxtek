@@ -31,14 +31,43 @@ export const metadata: Metadata = {
     'Azure Managed Services',
   ],
   authors: [{ name: 'FelxTek' }],
+  creator: 'FelxTek',
+  publisher: 'FelxTek',
+  alternates: {
+    canonical: '/',
+  },
+  icons: {
+    icon: [{ url: '/icon.png', type: 'image/png' }],
+    apple: [{ url: '/icon.png' }],
+    shortcut: ['/icon.png'],
+  },
   openGraph: {
     title: 'FelxTek | Microsoft Cloud & Cybersecurity Consulting',
     description:
       'Microsoft Cloud Infrastructure & Cybersecurity built for modern business. Secure, modernize, and scale your Azure and Microsoft 365 environment.',
+    url: 'https://felxtek.com',
     type: 'website',
     locale: 'en_US',
     siteName: 'FelxTek',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'FelxTek | Microsoft Cloud & Cybersecurity Consulting',
+    description:
+      'Microsoft Cloud Infrastructure & Cybersecurity built for modern business. Secure, modernize, and scale your Azure and Microsoft 365 environment.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+  category: 'technology',
   generator: 'v0.app',
 }
 
@@ -58,6 +87,45 @@ export default function RootLayout({
       className={`${geist.variable} ${geistMono.variable} ${spaceGrotesk.variable} bg-background`}
     >
       <body className="font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'ProfessionalService',
+              name: 'FelxTek',
+              image: 'https://felxtek.com/opengraph-image.png',
+              logo: 'https://felxtek.com/icon.png',
+              url: 'https://felxtek.com',
+              email: 'socal@felxtek.com',
+              description:
+                'FelxTek is a Southern California Microsoft cloud consulting and cybersecurity firm specializing in Microsoft Azure, Microsoft 365, Entra ID, Intune, Defender, and Sentinel—with expertise in HIPAA, SOC 2, CMMC, FedRAMP, and NIST.',
+              areaServed: {
+                '@type': 'Place',
+                name: 'Southern California',
+              },
+              address: {
+                '@type': 'PostalAddress',
+                addressRegion: 'CA',
+                addressCountry: 'US',
+              },
+              knowsAbout: [
+                'Microsoft Azure',
+                'Microsoft 365',
+                'Microsoft Entra ID',
+                'Microsoft Intune',
+                'Microsoft Defender',
+                'Microsoft Sentinel',
+                'Cybersecurity',
+                'CMMC',
+                'SOC 2',
+                'HIPAA',
+                'FedRAMP',
+                'NIST',
+              ],
+            }),
+          }}
+        />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
