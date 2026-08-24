@@ -17,6 +17,8 @@ type Service = {
   Icon: LucideIcon
   title: string
   description: string
+  bestFor: string
+  outcome: string
   items: string[]
 }
 
@@ -25,79 +27,96 @@ const services: Service[] = [
     Icon: Cloud,
     title: 'Azure Infrastructure',
     description:
-      'Design and optimization of secure, scalable Microsoft Azure environments.',
+      'We architect, migrate, and harden Azure environments—landing zones, networking, and DR—so your workloads run fast, secure, and cost-controlled.',
+    bestFor: 'Teams moving off on-prem or fixing a sprawling Azure setup',
+    outcome: 'A resilient, well-governed Azure foundation with lower monthly spend',
     items: [
-      'Cloud architecture',
-      'Azure networking',
-      'Virtual machines',
-      'Azure Virtual Desktop',
-      'Private networking',
-      'Backup & disaster recovery',
-      'Infrastructure modernization',
+      'Azure Landing Zones & governance',
+      'Hub-and-spoke networking & firewalls',
+      'VM & Azure Virtual Desktop deployment',
+      'Backup & disaster recovery (BCDR)',
+      'Cost optimization & right-sizing',
+      'On-prem to cloud migration',
     ],
   },
   {
     Icon: Boxes,
     title: 'Microsoft 365',
-    description: 'Secure and optimize Microsoft 365 environments.',
+    description:
+      'From tenant setup to Exchange, Teams, and SharePoint governance, we make M365 secure, organized, and right-licensed—no wasted seats.',
+    bestFor: 'Organizations overpaying for licenses or lacking M365 governance',
+    outcome: 'A tidy, secure tenant with the right licenses and clear data policies',
     items: [
-      'Microsoft 365 administration',
-      'Exchange Online',
-      'Teams',
-      'SharePoint',
-      'Licensing optimization',
-      'Migration',
+      'Tenant setup & secure baseline',
+      'Exchange Online & mail flow security',
+      'Teams & SharePoint governance',
+      'Email & data migration',
+      'License audit & cost reduction',
+      'Data lifecycle & retention',
     ],
   },
   {
     Icon: Fingerprint,
     title: 'Identity & Endpoint Management',
     description:
-      'Modern identity governance and endpoint management across your organization.',
+      'We deploy Entra ID and Intune with Conditional Access, MFA, and device compliance so only trusted users on trusted devices reach your data.',
+    bestFor: 'Companies enforcing Zero Trust or securing remote/hybrid work',
+    outcome: 'Phishing-resistant access and fully managed, compliant devices',
     items: [
-      'Microsoft Entra ID',
-      'Conditional Access',
-      'MFA',
-      'Identity governance',
-      'Privileged access',
-      'Microsoft Intune',
-      'Device compliance',
+      'Microsoft Entra ID configuration',
+      'Conditional Access & MFA rollout',
+      'Privileged access (PIM) & governance',
+      'Intune device enrollment & policy',
+      'App protection & BYOD controls',
+      'Automated device compliance',
     ],
   },
   {
     Icon: ShieldCheck,
     title: 'Cybersecurity',
     description:
-      'Threat protection and monitoring built on the Microsoft security stack.',
+      'We stand up Microsoft Defender and Sentinel with tuned detections and response playbooks—turning raw signals into fast, actionable alerts.',
+    bestFor: 'Businesses needing real threat detection, not just antivirus',
+    outcome: 'Continuous threat visibility with a defined detect-and-respond process',
     items: [
-      'Microsoft Defender',
-      'Microsoft Sentinel',
-      'SIEM',
-      'Cloud security',
-      'Threat protection',
-      'Security monitoring',
-      'Zero Trust architecture',
+      'Defender XDR deployment & tuning',
+      'Sentinel SIEM & log onboarding',
+      'Detection rules & automation (SOAR)',
+      'Incident response playbooks',
+      'Vulnerability & attack-surface review',
+      'Zero Trust architecture design',
     ],
   },
   {
     Icon: ClipboardCheck,
     title: 'Compliance & Security Readiness',
     description:
-      'FelxTek helps organizations align their technology environments with security and compliance requirements.',
-    items: ['SOC 2', 'HIPAA', 'CMMC', 'FedRAMP', 'NIST'],
+      'We map your Microsoft environment to the controls that matter—closing gaps and producing the evidence auditors ask for.',
+    bestFor: 'Regulated orgs preparing for an audit or customer security review',
+    outcome: 'Audit-ready documentation and a clear remediation roadmap',
+    items: [
+      'Gap assessment against your framework',
+      'Control mapping & policy authoring',
+      'Evidence collection & reporting',
+      'HIPAA, SOC 2, CMMC, FedRAMP, NIST',
+      'Microsoft Purview data protection',
+      'Ongoing compliance posture reviews',
+    ],
   },
   {
     Icon: Gauge,
     title: 'Managed Cloud & Security',
-    description: 'Ongoing management and optimization of Microsoft environments.',
+    description:
+      'A dedicated team monitors, patches, and optimizes your Azure, M365, and security stack 24/7—so your environment stays healthy without adding headcount.',
+    bestFor: 'Lean IT teams wanting expert coverage without hiring',
+    outcome: 'Proactive management, predictable costs, and a senior advisor on call',
     items: [
-      'Azure management',
-      'Microsoft 365 management',
-      'Security monitoring',
-      'Identity management',
-      'Endpoint management',
-      'Cloud optimization',
-      'Technical advisory',
+      '24/7 monitoring & alerting',
+      'Patch & update management',
+      'Identity & endpoint administration',
+      'Monthly optimization & reporting',
+      'Security posture management',
+      'Fractional CISO & advisory',
     ],
   },
 ]
@@ -109,7 +128,7 @@ export function ServicesSection() {
         <SectionHeading
           eyebrow="Services"
           title="End-to-end Microsoft cloud and security"
-          description="From architecture and migration to identity, endpoints, and 24/7 management—one partner across your entire Microsoft environment."
+          description="From architecture and migration to identity, endpoints, and 24/7 management—one partner across your entire Microsoft environment. Each engagement is scoped to a clear, measurable outcome."
         />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -123,6 +142,26 @@ export function ServicesSection() {
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {service.description}
                 </p>
+
+                <div className="mt-4 flex flex-col gap-2">
+                  <div className="flex items-start gap-2 rounded-lg border border-border bg-secondary/40 px-3 py-2">
+                    <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-azure-soft">
+                      Best for
+                    </span>
+                    <span className="text-xs leading-snug text-foreground/85">
+                      {service.bestFor}
+                    </span>
+                  </div>
+                  <div className="flex items-start gap-2 rounded-lg border border-primary/20 bg-primary/5 px-3 py-2">
+                    <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
+                      Outcome
+                    </span>
+                    <span className="text-xs leading-snug text-foreground/85">
+                      {service.outcome}
+                    </span>
+                  </div>
+                </div>
+
                 <ul className="mt-5 grid gap-2 border-t border-border pt-5">
                   {service.items.map((item) => (
                     <li

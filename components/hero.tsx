@@ -14,6 +14,12 @@ const techBar = [
   'Sentinel',
 ]
 
+const stats = [
+  { value: '24/7', label: 'Security monitoring & response' },
+  { value: '99.9%', label: 'Cloud uptime targets' },
+  { value: '5+', label: 'Compliance frameworks supported' },
+]
+
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-16">
@@ -107,6 +113,25 @@ export function Hero() {
             <ShieldCheck className="size-4 text-primary" />
             Security-first architecture · HIPAA · SOC 2 · CMMC · FedRAMP · NIST
           </motion.div>
+
+          <motion.dl
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="mt-10 grid w-full max-w-xl grid-cols-3 gap-4 border-t border-border pt-8"
+          >
+            {stats.map((stat) => (
+              <div key={stat.label} className="flex flex-col">
+                <dt className="sr-only">{stat.label}</dt>
+                <dd className="bg-gradient-to-r from-azure-soft to-primary bg-clip-text text-3xl font-semibold tracking-tight text-transparent sm:text-4xl">
+                  {stat.value}
+                </dd>
+                <span className="mt-1.5 text-xs leading-snug text-muted-foreground sm:text-sm">
+                  {stat.label}
+                </span>
+              </div>
+            ))}
+          </motion.dl>
         </div>
 
         <motion.div
