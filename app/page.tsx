@@ -1,8 +1,6 @@
 import { SiteHeader } from '@/components/site-header'
 import { Hero } from '@/components/hero'
 import { ServicesSection } from '@/components/services-section'
-import { MicrosoftCloudSection } from '@/components/microsoft-cloud-section'
-import { CybersecuritySection } from '@/components/cybersecurity-section'
 import { ComplianceSection } from '@/components/compliance-section'
 import { IndustriesSection } from '@/components/industries-section'
 import { SecurityAssessmentSection } from '@/components/security-assessment-section'
@@ -20,8 +18,6 @@ export default function Page() {
       <main>
         <Hero />
         <ServicesSection />
-        <MicrosoftCloudSection />
-        <CybersecuritySection />
         <ComplianceSection />
         <IndustriesSection />
         <SecurityAssessmentSection />

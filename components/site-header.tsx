@@ -8,8 +8,6 @@ import { Logo } from '@/components/logo'
 
 const navItems = [
   { label: 'Services', href: '/#services' },
-  { label: 'Microsoft Cloud', href: '/#microsoft-cloud' },
-  { label: 'Cybersecurity', href: '/#cybersecurity' },
   { label: 'Compliance', href: '/#compliance' },
   { label: 'Industries', href: '/#industries' },
   { label: 'Blog', href: '/blog' },
