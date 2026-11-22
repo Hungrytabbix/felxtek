@@ -21,6 +21,11 @@ export function SiteFooter() {
               Cloud infrastructure | Cloud security | Compliance
             </p>
             <p className="mt-2 text-sm text-muted-foreground">Southern California</p>
+            <p className="mt-2 text-sm">
+              <a href="mailto:socal@felxtek.com" className="rounded-sm text-foreground underline underline-offset-4 hover:text-primary focus-visible:outline-2 focus-visible:outline-primary">
+                socal@felxtek.com
+              </a>
+            </p>
             <a
               href="https://www.linkedin.com/"
               target="_blank"
