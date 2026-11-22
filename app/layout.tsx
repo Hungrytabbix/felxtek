@@ -91,7 +91,7 @@ export default function RootLayout({
               '@id': 'https://felxtek.com/#organization',
               name: 'FelxTek',
               image: 'https://felxtek.com/opengraph-image.png',
-              logo: 'https://felxtek.com/icon.png',
+              logo: 'https://felxtek.com/felxtek-wordmark.png',
               url: 'https://felxtek.com',
               email: 'socal@felxtek.com',
               description:

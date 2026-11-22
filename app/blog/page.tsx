@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
+import { Logo } from '@/components/logo'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { Reveal } from '@/components/reveal'
@@ -135,9 +136,7 @@ export default function BlogIndexPage() {
                     }}
                     aria-hidden="true"
                   >
-                    <span className="text-5xl font-bold tracking-tight text-foreground/90">
-                      Felx<span className="text-primary">Tek</span>
-                    </span>
+                    <Logo className="w-3/4 max-w-60" />
                   </div>
                 </div>
               </Link>

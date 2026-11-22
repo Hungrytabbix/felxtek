@@ -79,7 +79,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       '@id': 'https://felxtek.com/#organization',
       '@type': 'Organization',
       name: 'FelxTek',
-      logo: { '@type': 'ImageObject', url: 'https://felxtek.com/icon.png' },
+      logo: { '@type': 'ImageObject', url: 'https://felxtek.com/felxtek-wordmark.png' },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',

@@ -15,10 +15,7 @@ export function SiteFooter() {
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
             <div className="flex items-center gap-2.5">
-              <Logo className="h-8 w-8" />
-              <span className="text-lg font-semibold tracking-tight text-foreground">
-                Felx<span className="text-primary">Tek</span>
-              </span>
+<Logo />
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
               Cloud infrastructure | Cloud security | Compliance
