@@ -20,6 +20,37 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'ai-security-compliance-microsoft-365',
+    title: 'AI Security and Compliance: How to Review a Microsoft 365 Copilot Pilot',
+    description: 'Follow a support team’s Copilot pilot from data access review to launch approval. Learn what to test, who signs off, and what evidence to keep.',
+    category: 'AI Governance',
+    author: 'FelxTek',
+    date: '2026-11-22',
+    readingTime: '4 min read',
+    keywords: ['AI security', 'AI compliance', 'Microsoft 365 Copilot', 'AI governance', 'data access review'],
+    content: [
+      { type: 'p', text: 'A support manager wants Microsoft 365 Copilot to draft answers from the company’s troubleshooting guides. The guides live in SharePoint, the team already uses Microsoft 365, and every reply will pass through a person. It sounds like an easy pilot to approve. Then someone asks: what happens if a draft includes a customer’s negotiated price from a document a support rep can open but should never quote?' },
+      { type: 'p', text: 'That question separates two decisions. Security asks whether the right people and systems can access the data. Compliance asks whether using it this way is permitted and whether the business can demonstrate that it followed its obligations. A successful pilot needs an answer to both.' },
+      { type: 'h2', text: 'Write the approval narrowly enough to test it' },
+      { type: 'p', text: 'Start with a single sentence: “Five support representatives may use approved product guides to draft troubleshooting replies; a representative must check each reply before sending it.” This gives the pilot an owner, a source, a user group, and a decision that stays with a person. It does not authorize processing customer case histories or sending mail automatically.' },
+      { type: 'p', text: 'Ask the data owner to identify which guides are approved. Ask the privacy or contracts lead whether the proposed inputs, storage, and intended recipients fit the organization’s agreements. If the team cannot establish permission for a data class, keep it outside the pilot. A vendor certification can inform the review, but it cannot grant rights your customer contract withholds.' },
+      { type: 'h2', text: 'Check what a representative can actually open' },
+      { type: 'p', text: 'Microsoft 365 Copilot can surface content available to the signed-in user. If the support group inherited read access to a sales library, that access matters even if nobody on the team knows the library exists. Naming an approved library in a usage policy is not the same as technically restricting access to it.' },
+      { type: 'p', text: 'Have the SharePoint owner review group membership, sharing links, and inherited permissions with a representative from support. Use a non-admin pilot identity and harmless sample files to confirm the expected boundaries. Verify access at the source: an assistant failing to mention a file in one answer is not proof that the user cannot read it.' },
+      { type: 'h3', text: 'What useful evidence looks like' },
+      { type: 'p', text: 'A dated record might say: “The support test identity opened the sample product guide. Access to the synthetic pricing sheet was denied after Sales removed the inherited grant. The library owner repeated both checks.” This tells a reviewer which identity was tested, what changed, and who verified the result. A screenshot of a tenant-wide setting tells only part of that story.' },
+      { type: 'h2', text: 'Test the draft, not just the permissions' },
+      { type: 'p', text: 'A draft can be inaccurate even when every source is authorized. For a small pilot, choose a few representative questions and have a product specialist write down the acceptable answers first. Include a case where the guides do not contain the answer. The expected outcome there is escalation, not a plausible guess.' },
+      { type: 'ul', items: ['Supported answer: ask about a documented product limit. The representative should be able to find the exact passage supporting the draft before using it.', 'Conflicting guidance: include an archived guide and its replacement in the review exercise. If the wrong revision informs the answer, fix the document lifecycle rather than relying on staff to catch the same mistake indefinitely.', 'Missing information: ask about an undocumented warranty exception. Confirm that the representative routes the question to the policy owner instead of making a customer commitment.'] },
+      { type: 'h2', text: 'Keep an audit trail without creating another sensitive dataset' },
+      { type: 'p', text: 'Agree on what must be retained before collecting prompts and responses. A review record can often use a test-case ID, source revision, result, reviewer, and remediation ticket rather than a copy of a customer conversation. Confirm the actual logging and retention behavior for your product, license, and tenant. Do not promise deletion on a schedule the organization has not verified.' },
+      { type: 'p', text: 'If a representative finds sensitive material in a draft, they should withhold the reply and use the existing incident-reporting channel. Identify who can pause the pilot, preserve necessary evidence under restricted access, and assess any notification duties. Avoid pasting the draft into a broadly shared ticket to explain what went wrong.' },
+      { type: 'h2', text: 'Make a launch decision someone can revisit' },
+      { type: 'ol', items: ['Approve the defined use only when the data owner confirms the access boundary and support leads have demonstrated the human review step.', 'Hold the pilot if access exceeds the approved scope or a material contractual question remains unanswered. Record the blocker, its owner, and the evidence needed to clear it.', 'Review again before adding a connector, another department, a new data class, or permission to act on a draft. Each change can invalidate the original approval.'] },
+      { type: 'p', text: 'The useful output is a short decision record, not a blanket declaration that AI is compliant. A manager should be able to read it months later and answer three questions: What did we allow? What did we check? What change would make us stop and review again?' },
+    ],
+  },
+  {
     slug: 'zero-trust-microsoft-entra-id-rollout',
     title: 'Zero Trust with Microsoft Entra ID: A Practical Rollout Plan',
     description:
