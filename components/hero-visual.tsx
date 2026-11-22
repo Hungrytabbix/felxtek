@@ -4,11 +4,11 @@ import { motion } from 'framer-motion'
 import { Cloud, ShieldCheck, Fingerprint, MonitorSmartphone, Radar, Lock } from 'lucide-react'
 
 const nodes = [
-  { id: 'cloud', label: 'Azure', Icon: Cloud, x: 50, y: 14 },
-  { id: 'identity', label: 'Entra ID', Icon: Fingerprint, x: 15, y: 40 },
-  { id: 'endpoint', label: 'Intune', Icon: MonitorSmartphone, x: 85, y: 40 },
-  { id: 'defender', label: 'Defender', Icon: ShieldCheck, x: 24, y: 82 },
-  { id: 'sentinel', label: 'Sentinel', Icon: Radar, x: 76, y: 82 },
+  { id: 'cloud', label: 'Infrastructure', Icon: Cloud, x: 50, y: 14 },
+  { id: 'identity', label: 'Access', Icon: Fingerprint, x: 15, y: 40 },
+  { id: 'workloads', label: 'Workloads', Icon: MonitorSmartphone, x: 85, y: 40 },
+  { id: 'controls', label: 'Controls', Icon: ShieldCheck, x: 24, y: 82 },
+  { id: 'monitoring', label: 'Monitoring', Icon: Radar, x: 76, y: 82 },
 ]
 
 const links: [number, number][] = [

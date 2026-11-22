@@ -2,7 +2,7 @@ import { Cloud, ShieldCheck, Users, Gauge } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 
 const stats = [
-  { Icon: Cloud, value: 'Azure & M365', label: 'Cloud specialization' },
+  { Icon: Cloud, value: 'Multi-cloud', label: 'Azure, AWS, and GCP' },
   { Icon: ShieldCheck, value: 'Security-first', label: 'Architecture approach' },
   { Icon: Users, value: '20–500', label: 'Employee organizations' },
   { Icon: Gauge, value: 'Managed', label: 'Ongoing optimization' },
@@ -24,16 +24,14 @@ export function AboutSection() {
             <div className="mt-6 space-y-4 text-pretty leading-relaxed text-muted-foreground">
               <p>
                 FelxTek is a Southern California technology consulting company
-                specializing in Microsoft cloud infrastructure and cybersecurity.
+                focused on cloud infrastructure, security, and compliance readiness.
               </p>
               <p>
-                We help organizations simplify complex technology environments and build
-                secure, scalable Microsoft platforms that support their business. Our
-                experience spans enterprise cloud architecture, cybersecurity, identity,
-                endpoint management, and regulated environments.
+                We work alongside your IT team to decide where workloads belong, how to protect
+                them, and who will own each control once the project is complete.
               </p>
               <p>
-                We bring enterprise-level Microsoft expertise to organizations that need
+                We bring cloud architecture and security expertise to organizations that need
                 sophisticated technology capabilities without building a large internal
                 cloud and security team.
               </p>

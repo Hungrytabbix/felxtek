@@ -10,16 +10,9 @@ const inputClass =
 const labelClass = 'mb-1.5 block text-sm font-medium text-foreground/90'
 
 const helpOptions = [
-  'Azure Infrastructure',
-  'Microsoft 365',
-  'Cybersecurity',
-  'Microsoft Entra / Identity',
-  'Intune / Endpoint Management',
-  'SOC 2',
-  'HIPAA',
-  'CMMC',
-  'FedRAMP',
-  'Managed Services',
+  'Cloud infrastructure',
+  'Cloud security',
+  'Compliance readiness',
   'Other',
 ]
 
@@ -88,11 +81,11 @@ export function ContactSection() {
             Contact
           </span>
           <h2 className="mt-4 text-balance text-3xl font-semibold text-foreground sm:text-4xl md:text-5xl">
-            Let&apos;s Talk About Your Microsoft Environment
+            Let&apos;s talk about your cloud environment
           </h2>
           <p className="mx-auto mt-5 max-w-lg text-pretty leading-relaxed text-muted-foreground">
             Tell us about your goals and current setup. We&apos;ll follow up to schedule a
-            consultation or a Microsoft security assessment.
+            consultation or a cloud security assessment.
           </p>
         </div>
 

@@ -8,13 +8,13 @@ const industries: { Icon: LucideIcon; name: string; description: string }[] = [
     Icon: HeartPulse,
     name: 'Healthcare',
     description:
-      'HIPAA-aligned Microsoft 365 and Azure environments that protect patient data while enabling clinical collaboration.',
+      'HIPAA-aligned cloud environments that protect patient data while enabling clinical collaboration.',
   },
   {
     Icon: Cpu,
     name: 'Technology & SaaS',
     description:
-      'Scalable Azure infrastructure, identity governance, and Zero Trust security for fast-moving product teams.',
+      'Scalable cloud infrastructure, identity governance, and Zero Trust security for fast-moving product teams.',
   },
   {
     Icon: Factory,
@@ -26,7 +26,7 @@ const industries: { Icon: LucideIcon; name: string; description: string }[] = [
     Icon: Plane,
     name: 'Aerospace & Defense',
     description:
-      'CMMC and NIST-oriented Microsoft environments built for suppliers handling sensitive information.',
+      'Cloud environments designed around CMMC and NIST requirements built for suppliers handling sensitive information.',
   },
   {
     Icon: Truck,
@@ -38,7 +38,7 @@ const industries: { Icon: LucideIcon; name: string; description: string }[] = [
     Icon: Briefcase,
     name: 'Professional Services',
     description:
-      'Modern Microsoft 365 collaboration with strong identity and data protection for client-facing firms.',
+      'Secure access to shared cloud applications and sensitive client data for client-facing firms.',
   },
 ]
 
@@ -53,7 +53,7 @@ export function IndustriesSection() {
         <SectionHeading
           eyebrow="Industries"
           title="Expertise tuned to your industry"
-          description="We apply Microsoft cloud and security expertise to the realities and regulations of the sectors we serve across Southern California."
+          description="We apply cloud infrastructure and security expertise to the realities and regulations of the sectors we serve across Southern California."
         />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

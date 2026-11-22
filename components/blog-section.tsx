@@ -13,7 +13,7 @@ export function BlogSection() {
         <SectionHeading
           eyebrow="Insights"
           title="Guidance from the FelxTek team"
-          description="Practical articles on Microsoft Azure, Microsoft 365, Zero Trust, and compliance—so you can make confident decisions about your cloud and security."
+          description="Field guides for IT teams on cloud architecture, security controls, recovery planning, and compliance."
         />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

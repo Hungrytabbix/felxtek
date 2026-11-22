@@ -14,17 +14,17 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://felxtek.com'),
   title: {
     default:
-      'Microsoft Cloud & Security Consulting in Southern California | FelxTek',
+      'Cloud Infrastructure, Security & Compliance Consulting | FelxTek',
     template: '%s | FelxTek',
   },
   description:
-    'Secure and manage Azure and Microsoft 365 with FelxTek in Southern California. Get help with cloud migrations, identity protection, and compliance readiness.',
+    'Southern California cloud consulting for Azure, AWS, and Google Cloud (GCP). Plan infrastructure, protect workloads, and prepare for compliance reviews with FelxTek.',
   keywords: [
-    'Microsoft Azure Consulting Southern California',
-    'Microsoft 365 Consulting',
-    'Azure Security Consulting',
-    'Microsoft Cloud Consulting',
-    'Microsoft Cybersecurity Consulting',
+    'Southern California cloud consulting',
+    'Azure infrastructure consulting',
+    'AWS cloud security',
+    'Google Cloud consulting',
+    'Cloud compliance readiness',
     'CMMC Consulting',
     'SOC 2 Cloud Security',
     'HIPAA Microsoft 365 Security',
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'FelxTek | Microsoft Cloud & Cybersecurity Consulting',
+    title: 'FelxTek | Cloud Infrastructure, Security & Compliance',
     description:
-      'Microsoft Cloud Infrastructure & Cybersecurity built for modern business. Secure, modernize, and scale your Azure and Microsoft 365 environment.',
+      'Build resilient infrastructure, protect cloud workloads, and prepare for compliance reviews across Azure, AWS, and Google Cloud.',
     url: 'https://felxtek.com',
     type: 'website',
     locale: 'en_US',
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FelxTek | Microsoft Cloud & Cybersecurity Consulting',
+    title: 'FelxTek | Cloud Infrastructure, Security & Compliance',
     description:
-      'Microsoft Cloud Infrastructure & Cybersecurity built for modern business. Secure, modernize, and scale your Azure and Microsoft 365 environment.',
+      'Build resilient infrastructure, protect cloud workloads, and prepare for compliance reviews across Azure, AWS, and Google Cloud.',
   },
   robots: {
     index: true,
@@ -95,7 +95,7 @@ export default function RootLayout({
               url: 'https://felxtek.com',
               email: 'socal@felxtek.com',
               description:
-                'FelxTek is a Southern California Microsoft cloud consulting and cybersecurity firm specializing in Microsoft Azure, Microsoft 365, Entra ID, Intune, Defender, and Sentinel—with expertise in HIPAA, SOC 2, CMMC, FedRAMP, and NIST.',
+                'FelxTek provides cloud infrastructure, cloud security, and compliance readiness consulting for Azure, AWS, and Google Cloud in Southern California.',
               areaServed: {
                 '@type': 'Place',
                 name: 'Southern California',
@@ -107,11 +107,11 @@ export default function RootLayout({
               },
               knowsAbout: [
                 'Microsoft Azure',
-                'Microsoft 365',
-                'Microsoft Entra ID',
-                'Microsoft Intune',
-                'Microsoft Defender',
-                'Microsoft Sentinel',
+                'Amazon Web Services',
+                'Google Cloud',
+                'Cloud infrastructure',
+                'Cloud security',
+                'Cloud compliance',
                 'Cybersecurity',
                 'CMMC',
                 'SOC 2',

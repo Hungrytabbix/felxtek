@@ -12,7 +12,7 @@ const steps = [
     num: '02',
     title: 'Design',
     description:
-      'Develop the recommended Microsoft cloud and security architecture.',
+      'Design the cloud architecture, access model, and controls around your requirements.',
   },
   {
     num: '03',

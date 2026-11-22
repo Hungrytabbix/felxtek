@@ -3,17 +3,12 @@ import { Button } from '@/components/ui/button'
 import { Reveal } from '@/components/reveal'
 
 const reviewAreas = [
-  'Microsoft 365',
-  'Azure',
-  'Entra ID',
-  'Conditional Access',
-  'MFA',
-  'Administrative privileges',
-  'Intune',
-  'Defender',
-  'Email security',
-  'Backup & disaster recovery',
-  'Cloud security',
+  'Network exposure',
+  'Identity and access',
+  'Sensitive data handling',
+  'Logging and monitoring',
+  'Backup and recovery',
+  'Compliance evidence',
 ]
 
 export function SecurityAssessmentSection() {
@@ -33,12 +28,11 @@ export function SecurityAssessmentSection() {
                   Security Assessment
                 </span>
                 <h2 className="mt-4 text-balance text-3xl font-semibold text-foreground sm:text-4xl md:text-5xl">
-                  How Secure Is Your Microsoft Environment?
+                  Where is your cloud most exposed?
                 </h2>
                 <p className="mt-5 text-pretty leading-relaxed text-muted-foreground">
-                  Many organizations use Microsoft 365 and Azure without fully configuring
-                  the security capabilities already available to them. FelxTek can review
-                  your environment and show you exactly where the gaps are.
+                  We review your cloud accounts with your team, identify the risks that matter
+                  to your workloads, and give you a prioritized plan for addressing them.
                 </p>
                 <Button
                   size="lg"
@@ -46,7 +40,7 @@ export function SecurityAssessmentSection() {
                   className="mt-8 h-11 bg-primary px-5 text-base text-primary-foreground shadow-[0_0_28px_-6px] shadow-primary/60 hover:bg-primary/90"
                   render={<a href="#contact" />}
                 >
-                  Request a Microsoft Security Assessment
+                  Request a Cloud Security Assessment
                   <ArrowRight data-icon="inline-end" />
                 </Button>
               </div>

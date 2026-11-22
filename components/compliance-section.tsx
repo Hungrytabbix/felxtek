@@ -10,12 +10,12 @@ const frameworks = [
   {
     name: 'HIPAA',
     description:
-      'Configure Microsoft 365 and Azure safeguards for protected health information across healthcare workflows.',
+      'Design cloud safeguards for protected health information across healthcare workflows.',
   },
   {
     name: 'CMMC',
     description:
-      'Architect Microsoft environments aligned to CMMC practices for defense supply chain requirements.',
+      'Design cloud environments aligned to CMMC practices for defense supply chain requirements.',
   },
   {
     name: 'FedRAMP',
@@ -36,7 +36,7 @@ export function ComplianceSection() {
         <SectionHeading
           eyebrow="Compliance"
           title="Technology Designed for Regulated Environments"
-          description="FelxTek has experience designing and operating Microsoft environments where security controls, documentation, access controls, monitoring, and compliance matter."
+          description="We help you map the requirements that apply to your organization to cloud controls, accountable owners, and evidence you can maintain."
         />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

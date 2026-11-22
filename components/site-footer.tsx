@@ -21,7 +21,7 @@ export function SiteFooter() {
               </span>
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
-              Microsoft Cloud | Infrastructure | Cybersecurity | Compliance
+              Cloud infrastructure | Cloud security | Compliance
             </p>
             <p className="mt-2 text-sm text-muted-foreground">Southern California</p>
             <a
@@ -57,7 +57,7 @@ export function SiteFooter() {
 
         <div className="mt-12 flex flex-col gap-2 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} FelxTek. All rights reserved.</p>
-          <p>Microsoft Azure &middot; Microsoft 365 &middot; Cybersecurity &middot; Compliance</p>
+          <p>Microsoft Azure &middot; Amazon Web Services &middot; Google Cloud</p>
         </div>
       </div>
     </footer>
