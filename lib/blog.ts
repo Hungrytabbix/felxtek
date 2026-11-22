@@ -9,6 +9,7 @@ export type BlogBlock =
 export type BlogPost = {
   slug: string
   title: string
+  searchTitle?: string
   description: string
   category: string
   author: string
@@ -21,6 +22,7 @@ export type BlogPost = {
 export const blogPosts: BlogPost[] = [
   {
     slug: 'microsoft-365-backup-restore-test',
+    searchTitle: 'How to Test Microsoft 365 Backup and SharePoint Recovery',
     title: 'Microsoft 365 Backup: How to Run a Restore Test',
     description: 'Test whether your team can recover a SharePoint workspace before a deadline. Set recovery targets, validate files and permissions, and record the gaps.',
     category: 'Business Continuity',
@@ -48,6 +50,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'ai-security-compliance-microsoft-365',
+    searchTitle: 'Microsoft 365 Copilot Security and Compliance Checklist',
     title: 'AI Security and Compliance: How to Review a Microsoft 365 Copilot Pilot',
     description: 'Follow a support team’s Copilot pilot from data access review to launch approval. Learn what to test, who signs off, and what evidence to keep.',
     category: 'AI Governance',
@@ -79,6 +82,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'zero-trust-microsoft-entra-id-rollout',
+    searchTitle: 'Microsoft Entra ID Zero Trust Rollout Guide',
     title: 'Zero Trust with Microsoft Entra ID: A Practical Rollout Plan',
     description:
       'A step-by-step approach to implementing Zero Trust identity with Microsoft Entra ID—covering Conditional Access, MFA, and least-privilege access without disrupting your users.',
@@ -228,6 +232,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'cmmc-2-microsoft-365-gcc-high',
+    searchTitle: 'CMMC 2.0 Readiness for Microsoft 365 GCC High',
     title: 'Preparing for CMMC 2.0 in Microsoft 365 GCC High',
     description:
       'What defense contractors need to know about achieving CMMC 2.0 compliance on Microsoft 365 GCC High—covering CUI boundaries, tenant selection, and the controls that matter most.',
@@ -353,6 +358,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'reduce-azure-costs-without-sacrificing-security',
+    searchTitle: 'How to Reduce Azure Costs Without Weakening Security',
     title: 'Cutting Azure Costs Without Sacrificing Security',
     description:
       'Practical FinOps strategies to reduce your Microsoft Azure bill—right-sizing, reservations, and governance—while keeping your security posture intact.',
@@ -465,6 +471,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'microsoft-sentinel-vs-defender-modern-soc',
+    searchTitle: 'Microsoft Sentinel vs. Defender: SIEM and XDR Compared',
     title: 'Microsoft Sentinel vs. Defender: Building a Modern SOC',
     description:
       'How Microsoft Sentinel and Microsoft Defender work together to power a modern Security Operations Center—and how to decide where each one fits.',

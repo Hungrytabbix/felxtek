@@ -9,7 +9,7 @@ import { getAllPosts, formatPostDate } from '@/lib/blog'
 export const metadata: Metadata = {
   title: 'Insights on Microsoft Cloud & Cybersecurity',
   description:
-    'Practical guidance on Microsoft Azure, Microsoft 365, Zero Trust, compliance (CMMC, HIPAA, SOC 2), and cybersecurity from the FelxTek consulting team.',
+    'Explore FelxTek guides to Microsoft 365 backup, Copilot governance, Entra ID, CMMC readiness, Azure costs, and security operations for IT teams.',
   keywords: [
     'Microsoft Azure blog',
     'Microsoft 365 security',
@@ -45,6 +45,8 @@ export default function BlogIndexPage() {
     '@context': 'https://schema.org',
     '@type': 'Blog',
     '@id': 'https://felxtek.com/blog#insights',
+    isPartOf: { '@id': 'https://felxtek.com/#website' },
+    inLanguage: 'en',
     publisher: { '@id': 'https://felxtek.com/#organization' },
     name: 'FelxTek Insights',
     description:

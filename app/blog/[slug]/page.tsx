@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const url = `https://felxtek.com/blog/${post.slug}`
 
   return {
-    title: post.title,
+    title: post.searchTitle ?? post.title,
     description: post.description,
     keywords: post.keywords,
     alternates: { canonical: `/blog/${post.slug}` },
@@ -76,6 +76,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     dateModified: post.date,
     author: { '@type': 'Organization', name: post.author, url: 'https://felxtek.com' },
     publisher: {
+      '@id': 'https://felxtek.com/#organization',
       '@type': 'Organization',
       name: 'FelxTek',
       logo: { '@type': 'ImageObject', url: 'https://felxtek.com/icon.png' },

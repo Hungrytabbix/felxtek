@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://felxtek.com'),
   title: {
     default:
-      'FelxTek | Microsoft Cloud & Cybersecurity Consulting in Southern California',
+      'Microsoft Cloud & Security Consulting in Southern California | FelxTek',
     template: '%s | FelxTek',
   },
   description:
