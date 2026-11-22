@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: 'FelxTek Insights | Microsoft Cloud & Cybersecurity',
     description:
       'Practical guidance on Microsoft Azure, Microsoft 365, Zero Trust, compliance, and cybersecurity from the FelxTek consulting team.',
-    url: 'https://felxtek.com/blog',
+    url: 'https://www.felxtek.com/blog',
     type: 'website',
     siteName: 'FelxTek',
     images: [{ url: '/felxtek-logo.png', alt: 'FelxTek' }],
@@ -45,22 +45,22 @@ export default function BlogIndexPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    '@id': 'https://felxtek.com/blog#insights',
-    isPartOf: { '@id': 'https://felxtek.com/#website' },
+    '@id': 'https://www.felxtek.com/blog#insights',
+    isPartOf: { '@id': 'https://www.felxtek.com/#website' },
     inLanguage: 'en',
-    publisher: { '@id': 'https://felxtek.com/#organization' },
+    publisher: { '@id': 'https://www.felxtek.com/#organization' },
     name: 'FelxTek Insights',
     description:
       'Practical guidance on Microsoft Azure, Microsoft 365, Zero Trust, compliance, and cybersecurity.',
-    url: 'https://felxtek.com/blog',
+    url: 'https://www.felxtek.com/blog',
     blogPost: posts.map((post) => ({
       '@type': 'BlogPosting',
-      '@id': `https://felxtek.com/blog/${post.slug}#article`,
+      '@id': `https://www.felxtek.com/blog/${post.slug}#article`,
       headline: post.title,
       description: post.description,
       datePublished: post.date,
       author: { '@type': 'Organization', name: post.author },
-      url: `https://felxtek.com/blog/${post.slug}`,
+      url: `https://www.felxtek.com/blog/${post.slug}`,
     })),
   }
 

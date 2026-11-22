@@ -11,10 +11,10 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://felxtek.com'),
+  metadataBase: new URL('https://www.felxtek.com'),
   title: {
     default:
-      'Cloud Infrastructure, Security & Compliance Consulting | FelxTek',
+      'FelxTek | Southern California Cloud & Cybersecurity Consulting',
     template: '%s | FelxTek',
   },
   description:
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: 'FelxTek | Cloud Infrastructure, Security & Compliance',
     description:
       'Build resilient infrastructure, protect cloud workloads, and prepare for compliance reviews across Azure, AWS, and Google Cloud.',
-    url: 'https://felxtek.com',
+    url: 'https://www.felxtek.com',
     type: 'website',
     locale: 'en_US',
     siteName: 'FelxTek',
@@ -88,11 +88,11 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'ProfessionalService',
-              '@id': 'https://felxtek.com/#organization',
+              '@id': 'https://www.felxtek.com/#organization',
               name: 'FelxTek',
-              image: 'https://felxtek.com/opengraph-image.png',
-              logo: 'https://felxtek.com/felxtek-wordmark.png',
-              url: 'https://felxtek.com',
+              image: 'https://www.felxtek.com/opengraph-image.png',
+              logo: 'https://www.felxtek.com/felxtek-wordmark.png',
+              url: 'https://www.felxtek.com',
               email: 'socal@felxtek.com',
               description:
                 'FelxTek provides cloud infrastructure, cloud security, and compliance readiness consulting for Azure, AWS, and Google Cloud in Southern California.',

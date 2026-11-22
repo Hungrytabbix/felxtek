@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/api/",
     },
-    sitemap: "https://felxtek.com/sitemap.xml",
-    host: "https://felxtek.com",
+    sitemap: "https://www.felxtek.com/sitemap.xml",
+    host: "https://www.felxtek.com",
   }
 }

@@ -16,8 +16,8 @@ export default function Page() {
     <div className="min-h-screen bg-background">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org', '@type': 'WebSite',
-        '@id': 'https://felxtek.com/#website', url: 'https://felxtek.com/',
-        name: 'FelxTek', inLanguage: 'en', publisher: { '@id': 'https://felxtek.com/#organization' },
+        '@id': 'https://www.felxtek.com/#website', url: 'https://www.felxtek.com/',
+        name: 'FelxTek', inLanguage: 'en', publisher: { '@id': 'https://www.felxtek.com/#organization' },
       }) }} />
       <SiteHeader />
       <main>
