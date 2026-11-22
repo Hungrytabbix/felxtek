@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: '%s | FelxTek',
   },
   description:
-    'FelxTek is a Southern California Microsoft cloud consulting and cybersecurity firm. We design, secure, and manage Microsoft Azure, Microsoft 365, Entra ID, Intune, Defender, and Sentinel environments—with expertise in HIPAA, SOC 2, CMMC, FedRAMP, and NIST.',
+    'Secure and manage Azure and Microsoft 365 with FelxTek in Southern California. Get help with cloud migrations, identity protection, and compliance readiness.',
   keywords: [
     'Microsoft Azure Consulting Southern California',
     'Microsoft 365 Consulting',
@@ -88,6 +88,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'ProfessionalService',
+              '@id': 'https://felxtek.com/#organization',
               name: 'FelxTek',
               image: 'https://felxtek.com/opengraph-image.png',
               logo: 'https://felxtek.com/icon.png',

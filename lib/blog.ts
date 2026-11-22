@@ -20,6 +20,33 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'microsoft-365-backup-restore-test',
+    title: 'Microsoft 365 Backup: How to Run a Restore Test',
+    description: 'Test whether your team can recover a SharePoint workspace before a deadline. Set recovery targets, validate files and permissions, and record the gaps.',
+    category: 'Business Continuity',
+    author: 'FelxTek',
+    date: '2026-11-22',
+    readingTime: '4 min read',
+    keywords: ['Microsoft 365 backup', 'SharePoint restore test', 'recovery time objective', 'business continuity'],
+    content: [
+      { type: 'p', text: 'Imagine that a project team loses its bid folder at 9 a.m. The submission deadline is noon. A backup dashboard says the last job succeeded. Can the bid manager find the right version of the proposal, open its pricing workbook, and submit on time? The dashboard cannot answer that question. A restore test can.' },
+      { type: 'p', text: 'Use a nonproduction SharePoint workspace with invented documents for this exercise. The goal is not to cause an outage or prove that every Microsoft 365 workload is protected. It is to find out whether one business process can resume, with the right information and access, in the time available.' },
+      { type: 'h2', text: 'Let the business owner set the finish line' },
+      { type: 'p', text: 'Ask two questions separately. How long can the team work without the folder? That gives you a recovery time objective, or RTO. How much recent work can the team afford to recreate? That gives you a recovery point objective, or RPO. A two-hour RTO does not mean the team can afford to lose two hours of pricing edits.' },
+      { type: 'p', text: 'For the bid exercise, suppose the owner needs the workspace back within two hours and can reconstruct at most thirty minutes of edits. Write those targets down before looking at the available backups. If your protection method only offers a usable recovery point from last night, you have already learned something important. A fast restore will not fix the missing morning work.' },
+      { type: 'h2', text: 'Know what is being recovered' },
+      { type: 'p', text: 'Version history can help with a mistaken edit. A recycle bin can help with a recently deleted item. Retention policies can preserve content for legal or records purposes. None of those facts, by itself, establishes that you can restore a whole workspace with its expected structure, versions, and permissions. Check what your configured backup or recovery service actually covers, including exclusions and restore destinations.' },
+      { type: 'ul', items: ['Prepare a small manifest: one proposal with two distinguishable revisions, one workbook, a restricted folder, and a link the bid team uses to find them.', 'Record the expected access: a bid manager can edit; a reviewer can read; a user outside the project cannot open the restricted folder.', 'Set the boundary: restore to an isolated location if supported. Otherwise use a dedicated test site and a recovery method approved for that site. Never overwrite the live bid to rehearse the procedure.'] },
+      { type: 'h2', text: 'Run the clock until someone can work again' },
+      { type: 'ol', items: ['Start the exercise with an ordinary support request. Record when it arrives, who owns it, and how long it takes to obtain restoration approval. These delays count against the business deadline.', 'Choose a recovery point and record its timestamp. Ask the operator to explain the selection: the latest available copy may already contain the mistaken change.', 'Restore the test data. Record job completion separately from business acceptance. A completed job is the beginning of validation, not the end of the outage.', 'Have the bid manager locate the proposal through the normal workflow, open the expected revision, and check the workbook. Have the reviewer and the out-of-project test user verify their respective access boundaries.'] },
+      { type: 'h3', text: 'Interpret the result without averaging away a failure' },
+      { type: 'p', text: 'Suppose the job finishes at 9:40 and the manager can use the files at 10:15 after a link is repaired. Measured from 9:00, business recovery took 75 minutes, not 40. If the newest usable copy was from 8:10, the potential data loss was 50 minutes. The team met its two-hour time target and missed its thirty-minute recovery point target. Record both outcomes.' },
+      { type: 'h2', text: 'Turn the findings into a decision' },
+      { type: 'p', text: 'Keep the test scope, recovery point, timestamps, access checks, and business owner’s acceptance together. Record failures without copying confidential documents into the evidence record. Assign each gap an owner and a retest condition: for example, the backup owner reviews recovery-point coverage, while the site owner fixes the navigation link and repeats the user acceptance check.' },
+      { type: 'p', text: 'End with a statement the bid manager can use: “For this workspace we restored the tested files in 75 minutes, but we could lose more pricing work than the team accepts.” That is a better basis for an investment decision than a green dashboard. Treat Exchange mailboxes and other workloads as separate exercises; passing a SharePoint test does not prove they will recover the same way.' },
+    ],
+  },
+  {
     slug: 'ai-security-compliance-microsoft-365',
     title: 'AI Security and Compliance: How to Review a Microsoft 365 Copilot Pilot',
     description: 'Follow a support team’s Copilot pilot from data access review to launch approval. Learn what to test, who signs off, and what evidence to keep.',

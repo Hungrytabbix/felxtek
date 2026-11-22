@@ -27,6 +27,14 @@ export const metadata: Metadata = {
       'Practical guidance on Microsoft Azure, Microsoft 365, Zero Trust, compliance, and cybersecurity from the FelxTek consulting team.',
     url: 'https://felxtek.com/blog',
     type: 'website',
+    siteName: 'FelxTek',
+    images: [{ url: '/felxtek-logo.png', alt: 'FelxTek' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'FelxTek Insights | Microsoft Cloud & Cybersecurity',
+    description: 'Guides for IT teams on Microsoft 365 recovery, Azure costs, AI governance, identity security, and compliance.',
+    images: [{ url: '/felxtek-logo.png', alt: 'FelxTek' }],
   },
 }
 
@@ -36,12 +44,15 @@ export default function BlogIndexPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
+    '@id': 'https://felxtek.com/blog#insights',
+    publisher: { '@id': 'https://felxtek.com/#organization' },
     name: 'FelxTek Insights',
     description:
       'Practical guidance on Microsoft Azure, Microsoft 365, Zero Trust, compliance, and cybersecurity.',
     url: 'https://felxtek.com/blog',
     blogPost: posts.map((post) => ({
       '@type': 'BlogPosting',
+      '@id': `https://felxtek.com/blog/${post.slug}#article`,
       headline: post.title,
       description: post.description,
       datePublished: post.date,
