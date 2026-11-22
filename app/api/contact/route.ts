@@ -1,3 +1,4 @@
+import { consultationWindows, consultationZone, validConsultationDate } from '@/lib/consultation'
 import { Resend } from "resend"
 
 export const runtime = "nodejs"
@@ -16,6 +17,8 @@ type ContactPayload = {
   email?: string
   phone?: string
   companySize?: string
+  preferredDate?: string
+  preferredWindow?: string
   topic?: string
   message?: string
   // Honeypot field — should be empty for real users.
@@ -43,6 +46,10 @@ export async function POST(request: Request) {
     return Response.json({ error: "Invalid request body." }, { status: 400 })
   }
 
+  if (!body || typeof body !== 'object' || Array.isArray(body) || Object.values(body).some(value => typeof value !== 'string' || value.length > 5000)) {
+    return Response.json({ error: 'Invalid form fields.' }, { status: 400 })
+  }
+
   // Honeypot: silently accept bots without sending mail.
   if (body.website && body.website.trim() !== "") {
     return Response.json({ ok: true })
@@ -64,6 +71,12 @@ export async function POST(request: Request) {
     return Response.json({ error: "Please provide a valid email address." }, { status: 400 })
   }
 
+  const preferredDate = body.preferredDate ?? ''
+  const preferredWindow = consultationWindows.find(window => window === body.preferredWindow)
+  if (!validConsultationDate(preferredDate) || !preferredWindow) {
+    return Response.json({ error: 'Select a future date and one of the listed Pacific time windows.' }, { status: 400 })
+  }
+
   const apiKey = process.env.RESEND_API_KEY
   if (!apiKey) {
     console.log("[v0] RESEND_API_KEY is not set")
@@ -77,6 +90,9 @@ export async function POST(request: Request) {
 
   const fullName = `${firstName} ${lastName}`
   const rows: [string, string][] = [
+    ["Preferred date", preferredDate],
+    ["Preferred time", `${preferredWindow} · ${consultationZone}`],
+    ["Status", "Requested — reply to confirm a meeting time"],
     ["Name", fullName],
     ["Company", company || "—"],
     ["Email", email],
@@ -127,20 +143,14 @@ export async function POST(request: Request) {
       from: CONTACT_FROM,
       to: [CONTACT_TO],
       replyTo: email,
-      subject: `Consultation request — ${fullName}${company ? ` (${company})` : ""}`,
+      subject: `Consultation request — ${preferredDate} · ${preferredWindow} Pacific`,
       html,
       text,
     })
 
     if (error) {
-      console.log("[v0] Resend error:", error)
-      // Surface Resend's own guidance (e.g. domain not verified) so setup issues
-      // are actionable instead of a generic failure.
-      const detail =
-        typeof (error as { message?: string }).message === "string"
-          ? (error as { message: string }).message
-          : "Could not send your request. Please try again."
-      return Response.json({ error: detail }, { status: 502 })
+      console.error('Consultation email rejected:', error.name)
+      return Response.json({ error: 'Your request could not be sent. Please try again or contact socal@felxtek.com.' }, { status: 502 })
     }
 
     return Response.json({ ok: true })

@@ -1,5 +1,6 @@
 'use client'
 
+import { consultationWindows, earliestConsultationDate } from '@/lib/consultation'
 import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
@@ -44,6 +45,8 @@ export function ContactSection() {
       phone: String(data.get('phone') ?? ''),
       companySize: String(data.get('companySize') ?? ''),
       topic: String(data.get('help') ?? ''),
+      preferredDate: String(data.get('preferredDate') ?? ''),
+      preferredWindow: String(data.get('preferredWindow') ?? ''),
       message: String(data.get('message') ?? ''),
       website: String(data.get('website') ?? ''),
     }
@@ -96,7 +99,7 @@ export function ContactSection() {
                 <CheckCircle2 className="size-8" />
               </span>
               <h3 className="text-2xl font-semibold text-foreground">
-                Thank you - message received
+                Consultation request sent
               </h3>
               <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
                 A FelxTek cloud specialist will reach out shortly to schedule your
@@ -223,6 +226,24 @@ export function ContactSection() {
                 </select>
               </div>
 
+              <fieldset className="min-w-0 border-t border-border pt-4">
+                <legend className="pr-2 font-medium">When would you like to meet?</legend>
+                <p className="mb-4 text-sm text-muted-foreground">Choose a day starting tomorrow. All times are Pacific (Los Angeles). We’ll email you to confirm a time.</p>
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <div>
+                    <label htmlFor="preferredDate" className={labelClass}>Preferred date</label>
+                    <input id="preferredDate" name="preferredDate" type="date" required onFocus={event => { event.currentTarget.min = earliestConsultationDate() }} className={inputClass} />
+                  </div>
+                  <div>
+                    <label htmlFor="preferredWindow" className={labelClass}>Preferred time window (Pacific)</label>
+                    <select id="preferredWindow" name="preferredWindow" required defaultValue="" className={inputClass}>
+                      <option value="" disabled>Select a window</option>
+                      {consultationWindows.map(window => <option key={window}>{window}</option>)}
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+
               <div>
                 <label htmlFor="message" className={labelClass}>
                   Message
@@ -251,7 +272,7 @@ export function ContactSection() {
                 disabled={status === 'submitting'}
                 className="h-11 w-full bg-primary text-base text-primary-foreground shadow-[0_0_28px_-6px] shadow-primary/60 hover:bg-primary/90 disabled:opacity-70"
               >
-                {status === 'submitting' ? 'Sending...' : 'Schedule a Consultation'}
+                {status === 'submitting' ? 'Sending...' : 'Request a Consultation'}
                 {status === 'submitting' ? null : <ArrowRight data-icon="inline-end" />}
               </Button>
               <p className="text-center text-xs text-muted-foreground">
