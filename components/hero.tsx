@@ -7,11 +7,8 @@ import { HeroVisual } from '@/components/hero-visual'
 
 const techBar = [
   'Microsoft Azure',
-  'Microsoft 365',
-  'Entra ID',
-  'Intune',
-  'Defender',
-  'Sentinel',
+  'Amazon Web Services (AWS)',
+  'Google Cloud (GCP)',
 ]
 
 const stats = [
@@ -43,7 +40,7 @@ export function Hero() {
             className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur-sm"
           >
             <MapPin className="size-3.5 text-primary" />
-            Southern California · Microsoft Cloud & Cybersecurity
+            Cloud consulting · Southern California
           </motion.span>
 
           <motion.h1
@@ -52,9 +49,9 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.05 }}
             className="mt-6 text-balance text-4xl font-semibold leading-[1.05] text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Secure. Modernize.{' '}
+            Cloud infrastructure,{' '}
             <span className="bg-gradient-to-r from-azure-soft to-primary bg-clip-text text-transparent">
-              Scale.
+              secure by design.
             </span>
           </motion.h1>
 
@@ -64,7 +61,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="mt-5 max-w-xl text-pretty text-lg font-medium text-foreground/90 sm:text-xl"
           >
-            Microsoft Cloud Infrastructure & Cybersecurity Built for Modern Business
+            Infrastructure, security, and compliance for Azure, AWS, and GCP.
           </motion.p>
 
           <motion.p
@@ -73,9 +70,8 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.25 }}
             className="mt-4 max-w-xl text-pretty leading-relaxed text-muted-foreground"
           >
-            FelxTek helps organizations design, secure, optimize, and manage Microsoft
-            Azure and Microsoft 365 environments—from cloud infrastructure and identity to
-            endpoint security and compliance.
+            We help your team move workloads to the cloud, protect what runs there, and
+            show how your controls meet customer and regulatory requirements.
           </motion.p>
 
           <motion.div
@@ -148,7 +144,7 @@ export function Hero() {
       <div className="border-y border-border bg-card/40 backdrop-blur-sm">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <p className="mb-4 text-center text-xs font-medium uppercase tracking-widest text-muted-foreground">
-            Deep expertise across the Microsoft cloud
+            Cloud platforms we support
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-12">
             {techBar.map((tech) => (

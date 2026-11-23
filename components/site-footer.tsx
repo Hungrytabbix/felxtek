@@ -15,15 +15,17 @@ export function SiteFooter() {
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
             <div className="flex items-center gap-2.5">
-              <Logo className="h-8 w-8" />
-              <span className="text-lg font-semibold tracking-tight text-foreground">
-                Felx<span className="text-primary">Tek</span>
-              </span>
+<Logo />
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
-              Microsoft Cloud | Infrastructure | Cybersecurity | Compliance
+              Cloud infrastructure | Cloud security | Compliance
             </p>
             <p className="mt-2 text-sm text-muted-foreground">Southern California</p>
+            <p className="mt-2 text-sm">
+              <a href="mailto:socal@felxtek.com" className="rounded-sm text-foreground underline underline-offset-4 hover:text-primary focus-visible:outline-2 focus-visible:outline-primary">
+                socal@felxtek.com
+              </a>
+            </p>
             <a
               href="https://www.linkedin.com/"
               target="_blank"
@@ -57,7 +59,7 @@ export function SiteFooter() {
 
         <div className="mt-12 flex flex-col gap-2 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} FelxTek. All rights reserved.</p>
-          <p>Microsoft Azure &middot; Microsoft 365 &middot; Cybersecurity &middot; Compliance</p>
+          <p>Microsoft Azure &middot; Amazon Web Services &middot; Google Cloud</p>
         </div>
       </div>
     </footer>

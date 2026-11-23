@@ -6,9 +6,9 @@ import { Reveal } from '@/components/reveal'
 const reasons: { Icon: LucideIcon; title: string; description: string }[] = [
   {
     Icon: Layers,
-    title: 'Microsoft-Focused Expertise',
+    title: 'Architecture Across Clouds',
     description:
-      'Deep expertise across Azure, Microsoft 365, identity, security, and endpoint management.',
+      'Choose the right environment for each workload based on risk, cost, and operational needs.',
   },
   {
     Icon: ShieldCheck,

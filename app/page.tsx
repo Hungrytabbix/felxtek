@@ -14,6 +14,11 @@ import { SiteFooter } from '@/components/site-footer'
 export default function Page() {
   return (
     <div className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org', '@type': 'WebSite',
+        '@id': 'https://www.felxtek.com/#website', url: 'https://www.felxtek.com/',
+        name: 'FelxTek', inLanguage: 'en', publisher: { '@id': 'https://www.felxtek.com/#organization' },
+      }) }} />
       <SiteHeader />
       <main>
         <Hero />

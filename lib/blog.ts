@@ -9,6 +9,7 @@ export type BlogBlock =
 export type BlogPost = {
   slug: string
   title: string
+  searchTitle?: string
   description: string
   category: string
   author: string
@@ -20,7 +21,97 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'microsoft-365-employee-offboarding-checklist',
+    searchTitle: 'Microsoft 365 Employee Offboarding Checklist',
+    title: 'A Microsoft 365 Offboarding Checklist: What to Do Before Removing a License',
+    description: 'Offboard a Microsoft 365 employee in the right order: close access, hand off mail and OneDrive files, and verify retention before removing the license.',
+    category: 'Identity & Access',
+    author: 'FelxTek',
+    date: '2026-11-22',
+    readingTime: '3 min read',
+    keywords: ['Microsoft 365 employee offboarding checklist', 'OneDrive file handover', 'Exchange Online mailbox handover'],
+    content: [
+      { type: 'p', text: 'At 4 p.m. on Friday, a project manager leaves. On Monday, a client will send a signed change order to her mailbox. The pricing workbook is in her OneDrive, and she is the only owner of the project team. IT can close the account on time and still leave the business unable to accept the order. Treat closing access and handing over work as two separate jobs.' },
+      { type: 'h2', text: '1. Before departure: name the owner of unfinished work' },
+      { type: 'p', text: 'Ask the manager to name a person, not a department, for each handoff. Who needs to receive the order? Who can approve the price? Who can manage membership in the project team? Those may be three different people. Do not grant full mailbox access when the business only needs someone to receive new client messages.' },
+      { type: 'p', text: 'Record the authorized cutoff time and time zone with HR. Ask the records owner whether the mailbox or files are subject to retention requirements or a legal hold. If that answer is unknown, keep deletion and license removal on hold; that uncertainty does not require leaving sign-in enabled.' },
+      { type: 'h2', text: '2. At the cutoff: close access without deleting the data' },
+      { type: 'p', text: 'Have an authorized administrator block sign-in and revoke sign-in sessions. For a synchronized identity, coordinate the change with the team responsible for the source directory. Revoking sessions is not a guarantee that every application ends access instantly. Check separately for applications with their own accounts or sessions.' },
+      { type: 'ul', items: ['Inventory privileged roles, group memberships and delegated access. Record the access removed and any item still awaiting an application owner.', 'Route managed devices through the approved return or retirement process. Do not treat a blocked cloud account as proof that a device was returned or that local files were erased.', 'Check for scheduled reports and automations owned by the departing user. Assign a supported replacement owner and test the next run rather than keeping the employee signed in.'] },
+      { type: 'h2', text: '3. Hand off the mailbox, not the password' },
+      { type: 'p', text: 'For the change order, first decide whether the successor needs past correspondence, incoming mail, or both. Use approved delegation or a shared mailbox where appropriate. If converting a mailbox, verify conversion before changing licensing and keep the underlying account that anchors the shared mailbox. Archive, hold and capacity requirements can affect whether a license is still needed.' },
+      { type: 'p', text: 'Test the handoff with an ordinary message containing no client information. Ask the successor to find it using their own account. If they must reply from the shared address, verify that separately: permission to read a mailbox is not permission to send as that mailbox.' },
+      { type: 'h2', text: '4. Move ongoing project files out of personal OneDrive' },
+      { type: 'p', text: 'Give an approved custodian access to the files needed for handover. For work the team will maintain, use a team-owned SharePoint library with the right membership. Do not copy an entire OneDrive into a broadly accessible folder just to rescue one workbook.' },
+      { type: 'p', text: 'Have the new owner open the workbook from the link the team will actually use. Can they edit and save it? Can the reviewer read it without acquiring edit rights? Update bookmarks or workflow references that still point to the personal location. Check the tenant’s retention settings rather than assuming the old link will stay available.' },
+      { type: 'h2', text: '5. Remove the license only after the handoff passes' },
+      { type: 'p', text: 'Close the ticket with evidence: the cutoff time, administrator, mailbox routing test, working file location, successor’s acceptance and records decision. If the file test fails, leave that task open with an owner and a deadline. Keep the former employee’s sign-in blocked while the team resolves it.' },
+      { type: 'p', text: 'The final question is not “Did we reclaim a license?” It is “Can the right person receive Monday’s order, open the approved price and respond from the right address without using the former employee’s account?” Once the answer is yes and preservation requirements are met, reclaim any license no longer required.' },
+    ],
+  },
+  {
+    slug: 'microsoft-365-backup-restore-test',
+    searchTitle: 'How to Test Microsoft 365 Backup and SharePoint Recovery',
+    title: 'Microsoft 365 Backup: How to Run a Restore Test',
+    description: 'Test whether your team can recover a SharePoint workspace before a deadline. Set recovery targets, validate files and permissions, and record the gaps.',
+    category: 'Business Continuity',
+    author: 'FelxTek',
+    date: '2026-11-22',
+    readingTime: '4 min read',
+    keywords: ['Microsoft 365 backup', 'SharePoint restore test', 'recovery time objective', 'business continuity'],
+    content: [
+      { type: 'p', text: 'Imagine that a project team loses its bid folder at 9 a.m. The submission deadline is noon. A backup dashboard says the last job succeeded. Can the bid manager find the right version of the proposal, open its pricing workbook, and submit on time? The dashboard cannot answer that question. A restore test can.' },
+      { type: 'p', text: 'Use a nonproduction SharePoint workspace with invented documents for this exercise. The goal is not to cause an outage or prove that every Microsoft 365 workload is protected. It is to find out whether one business process can resume, with the right information and access, in the time available.' },
+      { type: 'h2', text: 'Let the business owner set the finish line' },
+      { type: 'p', text: 'Ask two questions separately. How long can the team work without the folder? That gives you a recovery time objective, or RTO. How much recent work can the team afford to recreate? That gives you a recovery point objective, or RPO. A two-hour RTO does not mean the team can afford to lose two hours of pricing edits.' },
+      { type: 'p', text: 'For the bid exercise, suppose the owner needs the workspace back within two hours and can reconstruct at most thirty minutes of edits. Write those targets down before looking at the available backups. If your protection method only offers a usable recovery point from last night, you have already learned something important. A fast restore will not fix the missing morning work.' },
+      { type: 'h2', text: 'Know what is being recovered' },
+      { type: 'p', text: 'Version history can help with a mistaken edit. A recycle bin can help with a recently deleted item. Retention policies can preserve content for legal or records purposes. None of those facts, by itself, establishes that you can restore a whole workspace with its expected structure, versions, and permissions. Check what your configured backup or recovery service actually covers, including exclusions and restore destinations.' },
+      { type: 'ul', items: ['Prepare a small manifest: one proposal with two distinguishable revisions, one workbook, a restricted folder, and a link the bid team uses to find them.', 'Record the expected access: a bid manager can edit; a reviewer can read; a user outside the project cannot open the restricted folder.', 'Set the boundary: restore to an isolated location if supported. Otherwise use a dedicated test site and a recovery method approved for that site. Never overwrite the live bid to rehearse the procedure.'] },
+      { type: 'h2', text: 'Run the clock until someone can work again' },
+      { type: 'ol', items: ['Start the exercise with an ordinary support request. Record when it arrives, who owns it, and how long it takes to obtain restoration approval. These delays count against the business deadline.', 'Choose a recovery point and record its timestamp. Ask the operator to explain the selection: the latest available copy may already contain the mistaken change.', 'Restore the test data. Record job completion separately from business acceptance. A completed job is the beginning of validation, not the end of the outage.', 'Have the bid manager locate the proposal through the normal workflow, open the expected revision, and check the workbook. Have the reviewer and the out-of-project test user verify their respective access boundaries.'] },
+      { type: 'h3', text: 'Interpret the result without averaging away a failure' },
+      { type: 'p', text: 'Suppose the job finishes at 9:40 and the manager can use the files at 10:15 after a link is repaired. Measured from 9:00, business recovery took 75 minutes, not 40. If the newest usable copy was from 8:10, the potential data loss was 50 minutes. The team met its two-hour time target and missed its thirty-minute recovery point target. Record both outcomes.' },
+      { type: 'h2', text: 'Turn the findings into a decision' },
+      { type: 'p', text: 'Keep the test scope, recovery point, timestamps, access checks, and business owner’s acceptance together. Record failures without copying confidential documents into the evidence record. Assign each gap an owner and a retest condition: for example, the backup owner reviews recovery-point coverage, while the site owner fixes the navigation link and repeats the user acceptance check.' },
+      { type: 'p', text: 'End with a statement the bid manager can use: “For this workspace we restored the tested files in 75 minutes, but we could lose more pricing work than the team accepts.” That is a better basis for an investment decision than a green dashboard. Treat Exchange mailboxes and other workloads as separate exercises; passing a SharePoint test does not prove they will recover the same way.' },
+    ],
+  },
+  {
+    slug: 'ai-security-compliance-microsoft-365',
+    searchTitle: 'Microsoft 365 Copilot Security and Compliance Checklist',
+    title: 'AI Security and Compliance: How to Review a Microsoft 365 Copilot Pilot',
+    description: 'Follow a support team’s Copilot pilot from data access review to launch approval. Learn what to test, who signs off, and what evidence to keep.',
+    category: 'AI Governance',
+    author: 'FelxTek',
+    date: '2026-11-22',
+    readingTime: '4 min read',
+    keywords: ['AI security', 'AI compliance', 'Microsoft 365 Copilot', 'AI governance', 'data access review'],
+    content: [
+      { type: 'p', text: 'A support manager wants Microsoft 365 Copilot to draft answers from the company’s troubleshooting guides. The guides live in SharePoint, the team already uses Microsoft 365, and every reply will pass through a person. It sounds like an easy pilot to approve. Then someone asks: what happens if a draft includes a customer’s negotiated price from a document a support rep can open but should never quote?' },
+      { type: 'p', text: 'That question separates two decisions. Security asks whether the right people and systems can access the data. Compliance asks whether using it this way is permitted and whether the business can demonstrate that it followed its obligations. A successful pilot needs an answer to both.' },
+      { type: 'h2', text: 'Write the approval narrowly enough to test it' },
+      { type: 'p', text: 'Start with a single sentence: “Five support representatives may use approved product guides to draft troubleshooting replies; a representative must check each reply before sending it.” This gives the pilot an owner, a source, a user group, and a decision that stays with a person. It does not authorize processing customer case histories or sending mail automatically.' },
+      { type: 'p', text: 'Ask the data owner to identify which guides are approved. Ask the privacy or contracts lead whether the proposed inputs, storage, and intended recipients fit the organization’s agreements. If the team cannot establish permission for a data class, keep it outside the pilot. A vendor certification can inform the review, but it cannot grant rights your customer contract withholds.' },
+      { type: 'h2', text: 'Check what a representative can actually open' },
+      { type: 'p', text: 'Microsoft 365 Copilot can surface content available to the signed-in user. If the support group inherited read access to a sales library, that access matters even if nobody on the team knows the library exists. Naming an approved library in a usage policy is not the same as technically restricting access to it.' },
+      { type: 'p', text: 'Have the SharePoint owner review group membership, sharing links, and inherited permissions with a representative from support. Use a non-admin pilot identity and harmless sample files to confirm the expected boundaries. Verify access at the source: an assistant failing to mention a file in one answer is not proof that the user cannot read it.' },
+      { type: 'h3', text: 'What useful evidence looks like' },
+      { type: 'p', text: 'A dated record might say: “The support test identity opened the sample product guide. Access to the synthetic pricing sheet was denied after Sales removed the inherited grant. The library owner repeated both checks.” This tells a reviewer which identity was tested, what changed, and who verified the result. A screenshot of a tenant-wide setting tells only part of that story.' },
+      { type: 'h2', text: 'Test the draft, not just the permissions' },
+      { type: 'p', text: 'A draft can be inaccurate even when every source is authorized. For a small pilot, choose a few representative questions and have a product specialist write down the acceptable answers first. Include a case where the guides do not contain the answer. The expected outcome there is escalation, not a plausible guess.' },
+      { type: 'ul', items: ['Supported answer: ask about a documented product limit. The representative should be able to find the exact passage supporting the draft before using it.', 'Conflicting guidance: include an archived guide and its replacement in the review exercise. If the wrong revision informs the answer, fix the document lifecycle rather than relying on staff to catch the same mistake indefinitely.', 'Missing information: ask about an undocumented warranty exception. Confirm that the representative routes the question to the policy owner instead of making a customer commitment.'] },
+      { type: 'h2', text: 'Keep an audit trail without creating another sensitive dataset' },
+      { type: 'p', text: 'Agree on what must be retained before collecting prompts and responses. A review record can often use a test-case ID, source revision, result, reviewer, and remediation ticket rather than a copy of a customer conversation. Confirm the actual logging and retention behavior for your product, license, and tenant. Do not promise deletion on a schedule the organization has not verified.' },
+      { type: 'p', text: 'If a representative finds sensitive material in a draft, they should withhold the reply and use the existing incident-reporting channel. Identify who can pause the pilot, preserve necessary evidence under restricted access, and assess any notification duties. Avoid pasting the draft into a broadly shared ticket to explain what went wrong.' },
+      { type: 'h2', text: 'Make a launch decision someone can revisit' },
+      { type: 'ol', items: ['Approve the defined use only when the data owner confirms the access boundary and support leads have demonstrated the human review step.', 'Hold the pilot if access exceeds the approved scope or a material contractual question remains unanswered. Record the blocker, its owner, and the evidence needed to clear it.', 'Review again before adding a connector, another department, a new data class, or permission to act on a draft. Each change can invalidate the original approval.'] },
+      { type: 'p', text: 'The useful output is a short decision record, not a blanket declaration that AI is compliant. A manager should be able to read it months later and answer three questions: What did we allow? What did we check? What change would make us stop and review again?' },
+    ],
+  },
+  {
     slug: 'zero-trust-microsoft-entra-id-rollout',
+    searchTitle: 'Microsoft Entra ID Zero Trust Rollout Guide',
     title: 'Zero Trust with Microsoft Entra ID: A Practical Rollout Plan',
     description:
       'A step-by-step approach to implementing Zero Trust identity with Microsoft Entra ID—covering Conditional Access, MFA, and least-privilege access without disrupting your users.',
@@ -170,6 +261,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'cmmc-2-microsoft-365-gcc-high',
+    searchTitle: 'CMMC 2.0 Readiness for Microsoft 365 GCC High',
     title: 'Preparing for CMMC 2.0 in Microsoft 365 GCC High',
     description:
       'What defense contractors need to know about achieving CMMC 2.0 compliance on Microsoft 365 GCC High—covering CUI boundaries, tenant selection, and the controls that matter most.',
@@ -295,6 +387,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'reduce-azure-costs-without-sacrificing-security',
+    searchTitle: 'How to Reduce Azure Costs Without Weakening Security',
     title: 'Cutting Azure Costs Without Sacrificing Security',
     description:
       'Practical FinOps strategies to reduce your Microsoft Azure bill—right-sizing, reservations, and governance—while keeping your security posture intact.',
@@ -407,6 +500,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'microsoft-sentinel-vs-defender-modern-soc',
+    searchTitle: 'Microsoft Sentinel vs. Defender: SIEM and XDR Compared',
     title: 'Microsoft Sentinel vs. Defender: Building a Modern SOC',
     description:
       'How Microsoft Sentinel and Microsoft Defender work together to power a modern Security Operations Center—and how to decide where each one fits.',

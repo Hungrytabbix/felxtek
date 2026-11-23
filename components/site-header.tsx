@@ -44,10 +44,7 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="/" className="flex items-center gap-2.5" aria-label="FelxTek home">
-          <Logo className="h-8 w-8" />
-          <span className="text-lg font-semibold tracking-tight text-foreground">
-            Felx<span className="text-primary">Tek</span>
-          </span>
+<Logo />
         </a>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">

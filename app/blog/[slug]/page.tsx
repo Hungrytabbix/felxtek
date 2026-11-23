@@ -23,10 +23,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: 'Article not found' }
   }
 
-  const url = `https://felxtek.com/blog/${post.slug}`
+  const url = `https://www.felxtek.com/blog/${post.slug}`
 
   return {
-    title: post.title,
+    title: post.searchTitle ?? post.title,
     description: post.description,
     keywords: post.keywords,
     alternates: { canonical: `/blog/${post.slug}` },
@@ -35,12 +35,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: post.description,
       url,
       type: 'article',
+      siteName: 'FelxTek',
+      images: [{ url: '/felxtek-logo.png', alt: 'FelxTek' }],
+      section: post.category,
       publishedTime: post.date,
       authors: [post.author],
       tags: post.keywords,
     },
     twitter: {
       card: 'summary_large_image',
+      images: [{ url: '/felxtek-logo.png', alt: 'FelxTek' }],
       title: post.title,
       description: post.description,
     },
@@ -62,19 +66,24 @@ export default async function BlogPostPage({ params }: PageProps) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
+    '@id': `https://www.felxtek.com/blog/${post.slug}#article`,
+    isPartOf: { '@id': 'https://www.felxtek.com/blog#insights' },
+    image: 'https://www.felxtek.com/felxtek-logo.png',
+    inLanguage: 'en',
     headline: post.title,
     description: post.description,
     datePublished: post.date,
     dateModified: post.date,
-    author: { '@type': 'Organization', name: post.author, url: 'https://felxtek.com' },
+    author: { '@type': 'Organization', name: post.author, url: 'https://www.felxtek.com' },
     publisher: {
+      '@id': 'https://www.felxtek.com/#organization',
       '@type': 'Organization',
       name: 'FelxTek',
-      logo: { '@type': 'ImageObject', url: 'https://felxtek.com/icon.png' },
+      logo: { '@type': 'ImageObject', url: 'https://www.felxtek.com/felxtek-wordmark.png' },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://felxtek.com/blog/${post.slug}`,
+      '@id': `https://www.felxtek.com/blog/${post.slug}`,
     },
     keywords: post.keywords.join(', '),
     articleSection: post.category,
@@ -84,13 +93,13 @@ export default async function BlogPostPage({ params }: PageProps) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://felxtek.com' },
-      { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://felxtek.com/blog' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.felxtek.com' },
+      { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://www.felxtek.com/blog' },
       {
         '@type': 'ListItem',
         position: 3,
         name: post.title,
-        item: `https://felxtek.com/blog/${post.slug}`,
+        item: `https://www.felxtek.com/blog/${post.slug}`,
       },
     ],
   }

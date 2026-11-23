@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
+import { Logo } from '@/components/logo'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { Reveal } from '@/components/reveal'
@@ -9,7 +10,7 @@ import { getAllPosts, formatPostDate } from '@/lib/blog'
 export const metadata: Metadata = {
   title: 'Insights on Microsoft Cloud & Cybersecurity',
   description:
-    'Practical guidance on Microsoft Azure, Microsoft 365, Zero Trust, compliance (CMMC, HIPAA, SOC 2), and cybersecurity from the FelxTek consulting team.',
+    'Explore FelxTek guides to Microsoft 365 backup, Copilot governance, Entra ID, CMMC readiness, Azure costs, and security operations for IT teams.',
   keywords: [
     'Microsoft Azure blog',
     'Microsoft 365 security',
@@ -25,8 +26,16 @@ export const metadata: Metadata = {
     title: 'FelxTek Insights | Microsoft Cloud & Cybersecurity',
     description:
       'Practical guidance on Microsoft Azure, Microsoft 365, Zero Trust, compliance, and cybersecurity from the FelxTek consulting team.',
-    url: 'https://felxtek.com/blog',
+    url: 'https://www.felxtek.com/blog',
     type: 'website',
+    siteName: 'FelxTek',
+    images: [{ url: '/felxtek-logo.png', alt: 'FelxTek' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'FelxTek Insights | Microsoft Cloud & Cybersecurity',
+    description: 'Guides for IT teams on Microsoft 365 recovery, Azure costs, AI governance, identity security, and compliance.',
+    images: [{ url: '/felxtek-logo.png', alt: 'FelxTek' }],
   },
 }
 
@@ -36,17 +45,22 @@ export default function BlogIndexPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
+    '@id': 'https://www.felxtek.com/blog#insights',
+    isPartOf: { '@id': 'https://www.felxtek.com/#website' },
+    inLanguage: 'en',
+    publisher: { '@id': 'https://www.felxtek.com/#organization' },
     name: 'FelxTek Insights',
     description:
       'Practical guidance on Microsoft Azure, Microsoft 365, Zero Trust, compliance, and cybersecurity.',
-    url: 'https://felxtek.com/blog',
+    url: 'https://www.felxtek.com/blog',
     blogPost: posts.map((post) => ({
       '@type': 'BlogPosting',
+      '@id': `https://www.felxtek.com/blog/${post.slug}#article`,
       headline: post.title,
       description: post.description,
       datePublished: post.date,
       author: { '@type': 'Organization', name: post.author },
-      url: `https://felxtek.com/blog/${post.slug}`,
+      url: `https://www.felxtek.com/blog/${post.slug}`,
     })),
   }
 
@@ -122,9 +136,7 @@ export default function BlogIndexPage() {
                     }}
                     aria-hidden="true"
                   >
-                    <span className="text-5xl font-bold tracking-tight text-foreground/90">
-                      Felx<span className="text-primary">Tek</span>
-                    </span>
+                    <Logo className="w-3/4 max-w-60" />
                   </div>
                 </div>
               </Link>

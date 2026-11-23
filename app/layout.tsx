@@ -11,20 +11,20 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://felxtek.com'),
+  metadataBase: new URL('https://www.felxtek.com'),
   title: {
     default:
-      'FelxTek | Microsoft Cloud & Cybersecurity Consulting in Southern California',
+      'FelxTek | Southern California Cloud & Cybersecurity Consulting',
     template: '%s | FelxTek',
   },
   description:
-    'FelxTek is a Southern California Microsoft cloud consulting and cybersecurity firm. We design, secure, and manage Microsoft Azure, Microsoft 365, Entra ID, Intune, Defender, and Sentinel environments—with expertise in HIPAA, SOC 2, CMMC, FedRAMP, and NIST.',
+    'Southern California cloud consulting for Azure, AWS, and Google Cloud (GCP). Plan infrastructure, protect workloads, and prepare for compliance reviews with FelxTek.',
   keywords: [
-    'Microsoft Azure Consulting Southern California',
-    'Microsoft 365 Consulting',
-    'Azure Security Consulting',
-    'Microsoft Cloud Consulting',
-    'Microsoft Cybersecurity Consulting',
+    'Southern California cloud consulting',
+    'Azure infrastructure consulting',
+    'AWS cloud security',
+    'Google Cloud consulting',
+    'Cloud compliance readiness',
     'CMMC Consulting',
     'SOC 2 Cloud Security',
     'HIPAA Microsoft 365 Security',
@@ -37,19 +37,19 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'FelxTek | Microsoft Cloud & Cybersecurity Consulting',
+    title: 'FelxTek | Cloud Infrastructure, Security & Compliance',
     description:
-      'Microsoft Cloud Infrastructure & Cybersecurity built for modern business. Secure, modernize, and scale your Azure and Microsoft 365 environment.',
-    url: 'https://felxtek.com',
+      'Build resilient infrastructure, protect cloud workloads, and prepare for compliance reviews across Azure, AWS, and Google Cloud.',
+    url: 'https://www.felxtek.com',
     type: 'website',
     locale: 'en_US',
     siteName: 'FelxTek',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FelxTek | Microsoft Cloud & Cybersecurity Consulting',
+    title: 'FelxTek | Cloud Infrastructure, Security & Compliance',
     description:
-      'Microsoft Cloud Infrastructure & Cybersecurity built for modern business. Secure, modernize, and scale your Azure and Microsoft 365 environment.',
+      'Build resilient infrastructure, protect cloud workloads, and prepare for compliance reviews across Azure, AWS, and Google Cloud.',
   },
   robots: {
     index: true,
@@ -88,13 +88,14 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'ProfessionalService',
+              '@id': 'https://www.felxtek.com/#organization',
               name: 'FelxTek',
-              image: 'https://felxtek.com/opengraph-image.png',
-              logo: 'https://felxtek.com/icon.png',
-              url: 'https://felxtek.com',
+              image: 'https://www.felxtek.com/opengraph-image.png',
+              logo: 'https://www.felxtek.com/felxtek-wordmark.png',
+              url: 'https://www.felxtek.com',
               email: 'socal@felxtek.com',
               description:
-                'FelxTek is a Southern California Microsoft cloud consulting and cybersecurity firm specializing in Microsoft Azure, Microsoft 365, Entra ID, Intune, Defender, and Sentinel—with expertise in HIPAA, SOC 2, CMMC, FedRAMP, and NIST.',
+                'FelxTek provides cloud infrastructure, cloud security, and compliance readiness consulting for Azure, AWS, and Google Cloud in Southern California.',
               areaServed: {
                 '@type': 'Place',
                 name: 'Southern California',
@@ -106,11 +107,11 @@ export default function RootLayout({
               },
               knowsAbout: [
                 'Microsoft Azure',
-                'Microsoft 365',
-                'Microsoft Entra ID',
-                'Microsoft Intune',
-                'Microsoft Defender',
-                'Microsoft Sentinel',
+                'Amazon Web Services',
+                'Google Cloud',
+                'Cloud infrastructure',
+                'Cloud security',
+                'Cloud compliance',
                 'Cybersecurity',
                 'CMMC',
                 'SOC 2',
