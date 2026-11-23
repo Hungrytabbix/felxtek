@@ -27,7 +27,7 @@ export function SiteFooter() {
               </a>
             </p>
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/company/felxtek"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="FelxTek on LinkedIn"
