@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     url: 'https://www.felxtek.com/blog',
     type: 'website',
     siteName: 'FelxTek',
-    images: [{ url: '/felxtek-logo.png', alt: 'FelxTek' }],
+    images: [{ url: '/opengraph-image.png', alt: 'FelxTek' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'FelxTek Insights | Microsoft Cloud & Cybersecurity',
     description: 'Guides for IT teams on Microsoft 365 recovery, Azure costs, AI governance, identity security, and compliance.',
-    images: [{ url: '/felxtek-logo.png', alt: 'FelxTek' }],
+    images: [{ url: '/opengraph-image.png', alt: 'FelxTek' }],
   },
 }
 
